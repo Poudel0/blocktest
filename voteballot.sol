@@ -38,19 +38,21 @@ contract Ballot {
 
     //Giving voter the right to vote on the ballot
 
-    function giveRightToVote(address voter) external {
+    function giveRightToVote(address[] calldata newvoter) external {
         require(
             msg.sender == chairperson,
-            "Only chairperson can givt the right to vote"
+            "Only chairperson can give the right to vote"
         );
+        for (uint i=0; i<newvoter.length ; i++){
         require(
-            !voters[voter].voted
+            !voters[newvoter[i]].voted
             "The voter has already voted"
 
         );
 
-        require(voters[voter].weight == 0);
-        voters[voter].weight = 1;
+        require(voters[newvoter[i]].weight == 0);
+        voters[newvoter[i]].weight = 1;
+        }
 
     }
 
