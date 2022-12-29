@@ -6,8 +6,32 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "get",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavoriteNumber",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -22,11 +46,48 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "x",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "set",
+				"name": "people",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -45,7 +106,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"first file.sol": "SimpleStorage"
+			"Next.sol": "SimpleStorage"
 		},
 		"evmVersion": "berlin",
 		"libraries": {},
@@ -59,12 +120,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"first file.sol": {
-			"keccak256": "0x5f67bf2981a67cad51df1785f194c6dd96f8fd88271e3bf4b861c66508e579e7",
-			"license": "GPL-3.0",
+		"Next.sol": {
+			"keccak256": "0x9db3566ba80b72c36ca16b2bb74b76e14121c9595efea01ccc551316e4f4897d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://df0f407299b6b18ed76dd2be73eb11f570e23913fc82177b3c155bf5c8bbb508",
-				"dweb:/ipfs/QmWaXJFHrgDo6aDqcbB82YjcrNpBHNpW6uk7Tz8UBvv493"
+				"bzz-raw://737f0be1ba7084a3ffb6bd606400b1c8c6555f84a9c5796361ea49eba377dd16",
+				"dweb:/ipfs/QmNUcsKMYc4a46uLGn279DzK8Gx4gmyZEiu3k4gS9sBMED"
 			]
 		}
 	},
