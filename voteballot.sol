@@ -12,9 +12,10 @@ contract Ballot {
     struct Proposal {
         bytes32 name;
         uint voteCount;
-        address  chairperson;
-
     }
+    address public chairperson;
+
+    
 
     mapping (address => Voter) public voters;
     Proposal[] public proposals;
@@ -45,7 +46,7 @@ contract Ballot {
         );
         for (uint i=0; i<newvoter.length ; i++){
         require(
-            !voters[newvoter[i]].voted
+            !voters[newvoter[i]].voted,
             "The voter has already voted"
 
         );
@@ -102,9 +103,9 @@ contract Ballot {
 
     function winningProposal() public view returns (uint winningProposal_){
         uint winningVoteCount = 0;
-        for (uint p = 0; proposals.length; p++){
+        for (uint p = 0; p< proposals.length; p++){
             if (proposals[p].voteCount > winningVoteCount){
-                winningVoteCount=proposals[p].votecount ;
+                winningVoteCount=proposals[p].voteCount ;
                 winningProposal_=p;
             }
         }
