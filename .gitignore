@@ -39,5 +39,6 @@
 ehthumbs.db
 Thumbs.db
 .env
+.encryptedKey.json
 
 node_modules
